@@ -173,6 +173,7 @@
 <img src="https://img.shields.io/badge/language-golang 1.23.0-brightgreen"> 
 <img src="https://img.shields.io/badge/package-gin v1.10.0-ff69b4">
 <img src="https://img.shields.io/badge/package-grpc v1.67.0-ff69b4">
+<br>
 <img src="https://img.shields.io/badge/package-protobuf v1.34.2-ff69b4">
 <img src="https://img.shields.io/badge/package-viper v1.19.0-ff69b4">
 <img src="https://img.shields.io/badge/package-validator v10.22.1-ff69b4">
