@@ -197,6 +197,6 @@
 ## 📚学习资料
 
 ## :memo:License:sparkling_heart:
-如果您喜欢`Golang总动员`的开拓者，由Lizuxian发起，喜欢:heart:请收藏给一个赞吧:thumbsup:
+如果您喜欢`Golang总动员`的开拓者，由Lizuxian发起，喜欢❤️请收藏给一个赞吧👍
 
 Copyright :copyright:2024 [Lizuxian](https://github.com/Leolee11111)
