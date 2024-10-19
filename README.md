@@ -184,9 +184,9 @@
 | 昵称 | 内容           | 联系方式                                  |
 | ------ | ---------------- | --------------------------------------------- |
 | 李祖贤 | ▶️Chapter4: golang函数高级<br>▶️Chapter5: golang异常处理<br>▶️Chapter7: golang并发编程<br>▶️Chapter8: golang网络编程（net/http）<br>▶️Chapter9: golang操作数据库（GORM）<br>▶️Chapter10: golang web框架（gin） |1028851587@qq.com|
-| 李梦吉 | ▶️Chapter6: golang常用工具包<br>▶️Chapter12: protobuf与grpc     |xxxx|
-| 于沼懿 | ▶️Chapter1: golang开发环境搭建<br>▶️Chapter2: golang基础入门<br>▶️Chapter3: golang数据结构    |xxxx|
-| 王嘉鹏 | ▶️Chapter11: 微服务概念与架构设计     |xxxx|
+| 李梦吉 | ▶️Chapter6: golang常用工具包<br>▶️Chapter12: protobuf与grpc     |[https://github.com/voidspiral](https://github.com/voidspiral)|
+| 于沼懿 | ▶️Chapter1: golang开发环境搭建<br>▶️Chapter2: golang基础入门<br>▶️Chapter3: golang数据结构    |[https://github.com/yzy-fulture](https://github.com/yzy-fulture)|
+| 王嘉鹏 | ▶️Chapter11: 微服务概念与架构设计     |[https://github.com/DaPengDiting](https://github.com/DaPengDiting)|
 
 ### 🧩改进优化
 <h2 align='left'><b>📫 欢迎沟通鸭！</b></h2>
