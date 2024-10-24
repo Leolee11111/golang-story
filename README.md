@@ -48,9 +48,10 @@
 <summary>✏️ Chapter4: golang函数高级➡️【2天】</summary>
 
 - ✅函数与闭包
-- ✅golang与面向对象
 - ✅函数与递归
-- ✅接口与鸭子类型
+- ✅接口类型
+- ✅golang与面向对象
+- ✅鸭子类型
 
 </details>
 
