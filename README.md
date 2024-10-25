@@ -58,9 +58,9 @@
 <details>
 <summary>✏️ Chapter5: golang异常处理➡️【2天】</summary>
 
+- ✅什么是异常
 - ✅defer的妙用
-- ✅recover与异常捕获
-- ✅error类型与panic异常处理
+- ✅recover与panic异常捕获
 
 </details>
 
