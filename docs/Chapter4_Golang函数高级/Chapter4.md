@@ -16,7 +16,7 @@
 
 函数是Golang中的基本构建块，用于代码重用和模块化。一个函数的基本结构包括函数名、参数列表、返回值类型和函数体。下面是一个简单的函数示例：
 
-➡️src/demo1/main.go
+➡️src/Chapter4_Golang函数高级/demo1/main.go
 
 ```go
 package main
@@ -55,7 +55,7 @@ func main() {
 
 我们将定义一个高阶函数`operate`，它接受两个整数和一个操作函数作为参数，并返回操作函数的结果。然后，我们可以定义不同的操作函数，如加法、减法、乘法和除法，并将它们传递给`operate`函数。
 
-➡️src/demo2/main.go
+➡️src/Chapter4_Golang函数高级/demo2/main.go
 
 ```go
 package main
@@ -124,7 +124,7 @@ func main() {
 
 下面是`map`函数的实现案例：`map`函数接受一个函数和一个列表，并返回一个新的列表，其中每个元素都是通过将函数应用于原列表中的每个元素得到的。
 
-➡️src/demo3/main.go
+➡️src/Chapter4_Golang函数高级/demo3/main.go
 
 ```go
 package main
@@ -179,7 +179,7 @@ func main() {
 
 下面是`filter`函数的实现案例：输入数据的切片slice和一个谓词函数(判断是否为偶数)，返回满足条件的切片slice：
 
-➡️src/demo4/main.go
+➡️src/Chapter4_Golang函数高级/demo4/main.go
 
 ```go
 package main
@@ -233,7 +233,7 @@ func main() {
 
 下面是`reduce`函数的实现案例：输入数据的切片和一个累积函数，返回累积后的结果：
 
-➡️src/demo5/main.go
+➡️src/Chapter4_Golang函数高级/demo5/main.go
 
 ```go
 package main
@@ -278,7 +278,7 @@ func main() {
 - 可以赋值给变量：匿名函数可以赋值给变量，以便稍后调用。
 - 可以作为参数传递：匿名函数可以作为参数传递给其他函数。
 
-➡️src/demo6/main.go
+➡️src/Chapter4_Golang函数高级/demo6/main.go
 
 ```go
 package main
@@ -319,7 +319,7 @@ func calc(a int, b int, op func(int, int) int) int {
 
 以下是一个简单的闭包示例：
 
-➡️src/demo7/main.go
+➡️src/Chapter4_Golang函数高级/demo7/main.go
 
 ```go
 package main
@@ -391,7 +391,7 @@ func main() {
 
 现有两种商品x和y，每次购买商品时，计数器会自动增加。我们可以使用闭包函数来实现这个计数器，从而计算每种商品的销售数量，进而判断商品的热度。
 
-➡️src/demo8/main.go
+➡️src/Chapter4_Golang函数高级/demo8/main.go
 
 ```go
 package main
@@ -438,7 +438,7 @@ func counter() counterFunc {
 - $0!=1$
 - $n!=n *(n-1)!$
 
-➡️src/demo9/main.go
+➡️src/Chapter4_Golang函数高级/demo9/main.go
 
 ```go
 package main
@@ -581,7 +581,7 @@ func main() {
 
 想象一下，我们有一个家庭，里面有各种各样的电器，如电视、空调、洗衣机等。每种电器都有不同的功能，但它们都有一个共同的行为：开机和关机。我们可以定义一个接口来表示这种共同的行为。
 
-➡️src/demo10/main.go
+➡️src/Chapter4_Golang函数高级/demo10/main.go
 
 ```go
 package main
@@ -861,7 +861,7 @@ func main() {
 
 想象一下，类是一个建筑蓝图，而对象是根据这个蓝图建造的具体房子。每个房子都有自己的颜色、大小和房间数量，但它们都遵循同一个蓝图。结构体就是Golang中的蓝图，而结构体实例就是具体的房子。
 
-➡️src/demo11/main.go
+➡️src/Chapter4_Golang函数高级/demo11/main.go
 
 ```go
 package main
@@ -932,7 +932,7 @@ func main() {
 
 我们来看一个更复杂的示例，展示如何使用结构体和方法实现封装：
 
-➡️src/demo12/main.go
+➡️src/Chapter4_Golang函数高级/demo12/main.go
 
 ```go
 package main
@@ -971,7 +971,7 @@ func main() {
 
 继承是指一个类（子类）继承另一个类（父类）的属性和方法。在Golang中，继承通过嵌入式结构体实现。嵌入式结构体是一种结构体嵌套的方式，子结构体可以访问父结构体的字段和方法。
 
-➡️src/demo13/main.go
+➡️src/Chapter4_Golang函数高级/demo13/main.go
 
 ```go
 package main
@@ -1008,7 +1008,7 @@ func main() {
 
 多态是指同一个接口可以由不同的类实现，从而在运行时表现出不同的行为。在Golang中，多态通过接口实现。
 
-➡️src/demo14/main.go
+➡️src/Chapter4_Golang函数高级/demo14/main.go
 
 ```go
 package main
