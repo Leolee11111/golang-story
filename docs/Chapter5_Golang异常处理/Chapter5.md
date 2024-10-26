@@ -167,11 +167,112 @@ Deferred call 1
 
 defer 语句在函数结束时按照后进先出的顺序执行，通常用于资源清理、文件关闭、解锁等操作。掌握 defer 语句的使用，可以提高代码的健壮性和可维护性。
 
+在这里给大家说几个defer的注意事项：
+
+（1）被 `defer` 的函数的参数会在 `defer` 声明时求值（而不是在函数实际执行时）。
+
+➡️src/Chapter5_Golang异常处理/demo4/main.go
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var i int = 1
+    defer fmt.Println("defer i = ", i)
+    i++
+}
+```
+
+当我们在控制台中运行上述程序时，会得到如下结果：
+
+```shell
+$ go run ./src/Chapter5_Golang异常处理/demo4/main.go 
+defer i =  1
+```
+
+如何解释如上代码呢？这是由于 `defer` 语句在声明时捕获了变量 `i` 的当前值，而不是在函数执行时。因此，即使在 `defer` 语句之后对i进行了递增操作，defer语句仍然打印了 `i` 的初始值。
+
+我们再看另一个更容易混淆的例子：
+
+➡️src/Chapter5_Golang异常处理/demo5/main.go
+
+```go
+package main
+
+import "fmt"
+
+
+func main() {
+    var i int = 1
+    defer func() {
+        fmt.Println("defer i = ", i)
+    }()
+    i++
+}
+```
+
+当我们在控制台中运行上述程序时，会得到如下结果：
+
+```shell
+$ go run ./src/Chapter5_Golang异常处理/demo5/main.go 
+defer i =  2
+```
+
+在这个案例中，`defer` 语句中的你匿名函数捕获了变量 `i` 的引用，而不是值。因此，即使在 `defer` 语句之后对 `i` 进行了递增操作，`defer` 语句仍然打印了 `i` 的最终值，但此时 `i` 的值为2。
+
+（2）避免在 `for` 中使用 `defer`：
+
+需要值得关注的是，被 `defer` 的调用会在包含的函数的末尾执行，而不是包含代码块的末尾（如：for）。在 `for` 循环中使用 `defer` 语句时，需要注意以下几点：
+
+- 资源积累：每次循环迭代都会创建一个新的 `defer` 语句，这可能会导致资源积累，直到函数返回时才会释放。例如，如果在循环中打开文件并使用 `defer` 关闭它们，所有文件会在函数结束时才关闭，而不是在每次迭代结束时关闭。
+- 顺序问题：`defer` 语句按照后进先出的顺序执行。如果在循环中使用多个 `defer` 语句，它们的执行顺序会与声明顺序相反。
+
+以下是一个示例，展示了在for循环中使用defer可能导致的问题：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    for i := 0; i < 3; i++ {
+        defer fmt.Println("defer i =", i)
+    }
+}
+```
+
+运行上述代码时，输出结果为：
+
+```shell
+defer i = 2
+defer i = 1
+defer i = 0
+```
+
+解决方法: 如果需要在每次迭代结束时执行某些操作，可以将这些操作放在循环体内，而不是使用 `defer` 。例如：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    for i := 0; i < 3; i++ {
+        fmt.Println("i =", i)
+        // 其他需要在每次迭代结束时执行的操作
+    }
+}
+```
+
+这样可以确保每次迭代结束时立即执行所需的操作，而不是等到函数返回时才执行。
+
 ## 5.3 recover与panic异常捕获
 
 在以上案例中，如果我们提前对除数为`0`的场景做出处理，我们可以避免程序崩溃。在Golang中，`panic` 用于引发异常，`recover` 用于捕获异常。`panic` 通常用于不可恢复的错误，而 `recover` 则用于从 `panic` 中恢复。下面我们来看看如何使用 `defer` 和 `recover` 来处理异常。
 
-➡️src/Chapter5_Golang异常处理/demo4/main.go
+➡️src/Chapter5_Golang异常处理/demo6/main.go
 
 ```go
 package main
