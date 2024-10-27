@@ -225,7 +225,7 @@ func main() {
 
 ```
 
-在本地浏览器访问链接http://localhost:8080/即可看到结果。
+运行程序后在本地浏览器访问链接http://localhost:8080/，即可看到结果。
 
 ## 5. go mod包管理
 
@@ -233,7 +233,32 @@ func main() {
 
 go mod是Go 1.11版本引入的一个依赖管理工具。它通过go.mod文件来记录项目的依赖关系，确保项目在不同环境中的一致性。使用go mod，你可以轻松地管理项目的依赖包，包括**下载、更新和版本控制**。
 
-### 5.2 下载依赖
+### 5.2 go.mod文件内容解析
+
+以一个go.mod文件举例，我们可以简单的了解一下go.mod文件中的内容
+
+```go
+module modexample
+
+go 1.16
+
+require (
+    github.com/spf13/viper v1.9.0
+    github.com/stretchr/testify v1.7.0
+)
+```
+
+- module modexample:声明这是一个模块，模块名称为modexample。在项目中，模块名称通常是项目的主要包名或项目的唯一标识符。
+- go 1.16：表示项目至少需要Go1.16版本才能编译和运行
+- require关键字：声明项目依赖的外部模块及其版本
+- github.com/spf13/viper v1.9.0：表示项目依赖github.com/spf13/viper模块的v1.9.0版本
+- github.com/stretchr/testify v1.7.0：表示项目依赖github.com/stretchr/testify模块的v1.7.0版本
+
+以上是一个对于go.mod文件的简单说明。后面我们遇到了会再详细讲解。
+
+### 5.3 go mod的基础功能
+
+#### 5.3.1 下载依赖
 
 下载依赖有两种方式
 
@@ -245,7 +270,7 @@ go mod是Go 1.11版本引入的一个依赖管理工具。它通过go.mod文件�
   go mod download
   ```
 
-### 5.3 更新依赖
+#### 5.3.2 更新依赖
 
 - **更新所有依赖**
 
@@ -264,7 +289,7 @@ go mod是Go 1.11版本引入的一个依赖管理工具。它通过go.mod文件�
     go get github.com/spf13/viper@v1.9.0
     ```
 
-### 5.4 查看依赖
+#### 5.3.3 查看依赖
 
 - 通过查看go.mod文件查看依赖
 
@@ -274,7 +299,7 @@ go mod是Go 1.11版本引入的一个依赖管理工具。它通过go.mod文件�
   go list -m all
   ```
 
-### 5.5 go mod项目结构
+### 5.4 go mod项目结构
 
 一个典型的使用go.mod的项目结构如下
 
