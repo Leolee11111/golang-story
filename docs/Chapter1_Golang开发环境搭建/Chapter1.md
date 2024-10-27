@@ -22,7 +22,7 @@
 
   - 下载安装包
 
-    ![](imgs\official_go_sdk.png)
+    ![](imgs/official_go_sdk.png)
 
   - 下载后直接点击安装即可
 
@@ -225,7 +225,7 @@ func main() {
 
 ```
 
-运行程序后在本地浏览器访问链接http://localhost:8080/，即可看到结果。
+运行程序后在本地浏览器访问如下链接即可看到结果：http://localhost:8080/
 
 ## 5. go mod包管理
 
