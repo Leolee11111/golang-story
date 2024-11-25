@@ -134,6 +134,10 @@ func main() {
 
   ![image-20241026195259804](imgs/start_go1.png)
 
+- 使用命令行方式运行：直接使用go run + 文件名运行即可
+
+  ![image-20241110140212309](imgs/command_run.png)
+
 上面我们就成功运行了我们第一个程序啦。
 
 ## 3. import包与package
@@ -315,6 +319,24 @@ modexample/
 - **go.sum**：记录每个依赖包的校验和。
 - **main.go**：项目的主文件。
 - **config.yaml**：配置文件。
+
+### 5.5 go mod init
+
+- 什么是 go mod init？
+
+  - **是一个初始化一个新模块并生成一个go.mod文件的命令**
+
+- 基本语法：
+
+  ```sh
+  go mod init [module-path]
+  ```
+
+  module-path:模块的路径，通常是项目的唯一标识符。如果省略，Go会尝试根据当前目录的路径推断模块名称。
+
+- 样例：
+
+  ![image-20241110141552076](imgs/go_mod_init.png)
 
 
 
