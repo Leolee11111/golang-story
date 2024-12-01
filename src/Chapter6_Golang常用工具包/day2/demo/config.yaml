@@ -1,0 +1,15 @@
+app:
+  name: MyService
+  version: 1.0.1
+  port: 8080
+
+database:
+  host: localhost
+  port: 5432
+  user: postgres
+  password: secret
+  name: myapp_db
+
+features:
+  cache: true
+  metrics: false
